@@ -1,0 +1,146 @@
+@import url(https://fonts.gogleapis.com/css?family=lato:300,400,700|PT++Mono);
+
+
+:root {
+    --primary-color: rgb(0, 0, 0);
+--secondary-color: gold;
+--tertiary-color: gold
+}
+
+
+
+
+body {
+    background-color: var(--primary-color);
+    font-size: 15px;
+    font-family: Lato, sans-serif;
+}
+
+
+
+#container {
+    height: 460px;
+    width: 360px;
+    margin: 100px auto;
+    background-color: rgb(118, 118, 134);
+    border-radius: 20px;
+}
+
+
+.title {
+    
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: normal;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    text-align: center;
+}
+
+.tipsForm {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.formInput {
+    background: white;
+    width: 40px;
+    padding: 5px 5px 8px 8px;
+}
+
+
+.formInput :focus {
+    border: 3px solid var(--tertiary-color);
+    outline: none;
+}
+
+.formSelect {
+    width: 180px;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.formSubmit:hover {
+    transform: scale(1.1);
+}
+
+
+.formSubmit {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    margin: 30px auto;
+    background: var(--secondary-color);
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+}
+
+#totalTip {
+    font-size: 15px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+.card {
+    margin: 0 auto;
+    padding: 2em;
+    width: 300px;
+    background-color: black;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+ @property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.card::after, .card::before{
+    --angle: 0deg;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+   background-image: conic-gradient(from var(--angle), transparent 70%, red, orange, yellow, green, blue ,violet, pink);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px; 
+    animation: 3s spin linear infinite;
+}
+
+.card::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+
+@keyframes spin{
+    from{
+--angle: 0deg;
+    }
+    to{
+--angle: 360deg;
+    }
+}
+
+
